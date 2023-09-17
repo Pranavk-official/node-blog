@@ -310,7 +310,10 @@ img {
   justify-content: space-between;
   padding: 10px 0;
 }
+
+
 /* SeachBar */
+
 .searchBar {
   visibility: hidden;
   transform: translateY(-100px);
@@ -330,9 +333,11 @@ img {
 .searchBar input {
   margin: 0;
   border: 0;
+  width: 95%;
 }
 
 #searchClose {
+  /* cursor: pointer; */
   position: absolute;
   top: 0;
   right: 0;

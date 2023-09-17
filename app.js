@@ -11,6 +11,10 @@ const PORT = 5000 || process.env.PORT;
 // Connect to DB
 connectDB();
 
+// middleware to Pass data
+app.use(express.urlencoded({extended: true}))
+app.use(express.json())
+
 // Static Folder
 app.use(express.static('public'))
 
