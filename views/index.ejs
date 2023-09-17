@@ -9,16 +9,21 @@
 
 <img src="/img/hero-image.webp" alt="person looking out through window" class="hero-img" width="981" height="528">
 
-<section class="articles">
-    <h2 class="articles__heading">
-        Latest Posts
-    </h2>
+<section class="article">
+    <h2 class="article__heading">Latest Posts</h2>
 
     <ul class="article-ul">
-        <a href="">
-            <span>Post Title</span>
-            <span class="article-list__date"></span>
-        </a>
+
+        <% data.forEach(post => { %> 
+
+            <li>
+                <a href="/post/<%= post._id %>">
+                    <span><%= post.title %> </span>
+                    <span class="article-list__date">post.createdAt</span>
+                </a>
+            </li>
+            
+        <% }) %> 
     </ul>
     <a href="#" class="pagination">
         &lt; View Older Posts
