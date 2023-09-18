@@ -32,7 +32,8 @@ router.get('', async (req, res) => {
             locals,
             data,
             current: page,
-            nextPage: hasNextPage ? nextPage : null
+            nextPage: hasNextPage ? nextPage : null,
+            currentRoute: '/'
         })
     } catch (error) {
         console.log(error);
@@ -56,6 +57,7 @@ router.get('/post/:id', async (req, res) => {
         const locals = {
             title: data.title,
             description: "Simple Blog using NodeJs, Express & MongoDB.",
+            currentRoute: `/posts/${slug}`
         }
         res.render('post', { locals, data })
     } catch (error) {
@@ -172,7 +174,16 @@ router.post('/search', async (req, res) => {
 
 
 router.get('/about', (req, res) => {
-    res.render('about')
+    res.render('about', {
+        title: 'About',
+        currentRoute: '/about'
+    })
+});
+router.get('/contact', (req, res) => {
+    res.render('contact', {
+        title: 'Contact',
+        currentRoute: '/contact'
+    })
 });
 
 
